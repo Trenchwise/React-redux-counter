@@ -1,6 +1,4 @@
-Make a Redux Toolkit version of the Functional Simpsons project
-
-Revisiting - Redux from video React Classes Redux
+Redux from video React Classes Redux
 
 Redux
 
@@ -30,7 +28,7 @@ React redux - Is a way of allowing react to talk to reduct.
 
 Then - the component needs to be wrapped in a special method called connect. You do this down in export.
 
-// this lets the component interact with redux.
+✅ The connect method lets the component interact with redux.
 
 export default connect(mapStateToProps)(App);;
 
@@ -45,9 +43,9 @@ The job of the function is to tell the store, what you want from the store. Its 
 
 All the state now lives in the store. So each component only recieves props.
 
-A component sends a message to the store teeling it manipulate the data. When you connect a component to the store it also gives you dispatch.
+A component sends a message to the store telling it manipulate the data. When you connect a component to the store it also gives you dispatch.
 
-Dispatch - sends an objec. it has a type inside it.
+✅ Dispatch - sends an objec. it has a type inside it.
 
 class App extends Component {
 
@@ -61,8 +59,31 @@ export default App;
 
 What this component does is it subcribes the data from the store and its able to send messages to the store to say that the data needs to be changed. This component doesn't hold state or logic. Its only job is to tell the store to change data and display data which it has extracted from the store.
 
-First - need to create initial state.
+1. - need to create initial state.
 
 This is the starting point for some of the data
 
-const initial state
+2. create the logic for the state - to do this you use a reducer function.
+
+Reducer ✅
+
+A reducer takes one or more things and gives you one thing back.
+You give it your old state
+Your action which has been dispatched. It then applies the action to the data. Then it gives you back new data.
+A reducer uses switch statements. they switch on the type
+
+The Store manipulates the data using the reducer function
+
+Need to wrap the app in a provider
+
+Now
+
+As usual. We seperate by concern.
+
+A new folder called store is added into src. Inside this goes two files - initialState and reducer. Which are both js files.
+
+The reducer file contains all the logic that manipulates the state.
+
+InitialState file contains all the initial States.
+
+The moment a component recieves new props it automatically rerenders itself.
