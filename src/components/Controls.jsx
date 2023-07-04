@@ -1,17 +1,20 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { INCREMENT } from "../store/types";
+import { DECREMENT } from "../store/types";
+import { RESET } from "../store/types";
 
 class Controls extends Component {
   add = () => {
-    this.props.dispatch({ type: "INCREMENT" });
+    this.props.dispatch({ type: INCREMENT }); // capitals
   };
 
   minus = () => {
-    this.props.dispatch({ type: "DECREMENT" });
+    this.props.dispatch({ type: DECREMENT });
   };
 
   reset = () => {
-    this.props.dispatch({ type: "RESET" });
+    this.props.dispatch({ type: RESET });
   };
 
   render() {
