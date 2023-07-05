@@ -146,3 +146,9 @@ Using these tools, you can look inside the store see what the data looks like.
 Action - will tell you the name of the action that caused it.
 
 The slider - let you rewind the programmes memory. You can move the programme backwards and forwards in time.
+
+An Action is telling the store to do something. It always has a type. You dispatch an action.
+
+You dont have to just send an action, you can send an entire payload.
+
+Action.payload can be anything - array, primitive

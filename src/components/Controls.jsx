@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { INCREMENT } from "../store/types";
 import { DECREMENT } from "../store/types";
 import { RESET } from "../store/types";
+import { INCREMENT_BY_VALUE } from "../store/types";
 
 class Controls extends Component {
   add = () => {
@@ -17,6 +18,10 @@ class Controls extends Component {
     this.props.dispatch({ type: RESET });
   };
 
+  add_Ten = () => {
+    this.props.dispatch({ type: INCREMENT_BY_VALUE, payload: 10 });
+  };
+
   render() {
     return (
       <>
@@ -24,6 +29,7 @@ class Controls extends Component {
         <button onClick={this.add}>Add</button>
         <button onClick={this.minus}>Minus</button>
         <button onClick={this.reset}>Reset</button>
+        <button onClick={this.add_Ten}>Add 10</button>
       </>
     );
   }

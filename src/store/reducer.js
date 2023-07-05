@@ -2,6 +2,7 @@ import { initialState } from "./initialState";
 import { DECREMENT } from "./types";
 import { INCREMENT } from "./types";
 import { RESET } from "./types";
+import { INCREMENT_BY_VALUE } from "./types";
 
 // The reducer
 // create the logic that is going to manipulate the state
@@ -11,6 +12,12 @@ export function reducer(state = initialState, action) {
       const copy = { ...state }; // copy the state
       copy.count += 1; // added one to count
       return copy; // must always return the copy
+    }
+
+    case INCREMENT_BY_VALUE: {
+      const copy = { ...state }; // copy the state
+      copy.count += action.payload; // increment by action.payload
+      return copy;
     }
 
     case DECREMENT: {
